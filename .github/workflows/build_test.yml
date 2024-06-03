@@ -19,3 +19,6 @@ jobs:
     - name: Start xcode build 🛠
       run: |
         xcodebuild build -project HiStock/HiStock.xcodeproj -scheme HiStock -destination 'platform=iOS Simulator,name=iPhone 15'
+    - name: Run Test
+      run: | 
+        xcodebuild clean test -project HiStock/HiStock.xcodeproj -scheme HiStock -destination "platform=iOS Simulator,name=iPhone 15"
