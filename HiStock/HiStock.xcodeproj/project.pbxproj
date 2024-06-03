@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5873F2842C0DEBA300BD2BDB /* HiStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */; };
 		58BDFBB22BB40A04006AC994 /* HiStockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB12BB40A04006AC994 /* HiStockApp.swift */; };
 		58BDFBB42BB40A04006AC994 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB32BB40A04006AC994 /* ContentView.swift */; };
 		58BDFBB62BB40A04006AC994 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB52BB40A04006AC994 /* Item.swift */; };
@@ -14,7 +15,19 @@
 		58BDFBBB2BB40A07006AC994 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58BDFBBA2BB40A07006AC994 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5873F2852C0DEBA300BD2BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58BDFBA62BB40A04006AC994 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58BDFBAD2BB40A04006AC994;
+			remoteInfo = HiStock;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5873F2812C0DEBA300BD2BDB /* HiStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiStockTests.swift; sourceTree = "<group>"; };
 		58BDFBAE2BB40A04006AC994 /* HiStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BDFBB12BB40A04006AC994 /* HiStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiStockApp.swift; sourceTree = "<group>"; };
 		58BDFBB32BB40A04006AC994 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +37,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5873F27E2C0DEBA300BD2BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58BDFBAB2BB40A04006AC994 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,10 +54,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5873F2822C0DEBA300BD2BDB /* HiStockTests */ = {
+			isa = PBXGroup;
+			children = (
+				5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */,
+			);
+			path = HiStockTests;
+			sourceTree = "<group>";
+		};
 		58BDFBA52BB40A04006AC994 = {
 			isa = PBXGroup;
 			children = (
 				58BDFBB02BB40A04006AC994 /* HiStock */,
+				5873F2822C0DEBA300BD2BDB /* HiStockTests */,
 				58BDFBAF2BB40A04006AC994 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				58BDFBAE2BB40A04006AC994 /* HiStock.app */,
+				5873F2812C0DEBA300BD2BDB /* HiStockTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +103,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5873F2802C0DEBA300BD2BDB /* HiStockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5873F2872C0DEBA300BD2BDB /* Build configuration list for PBXNativeTarget "HiStockTests" */;
+			buildPhases = (
+				5873F27D2C0DEBA300BD2BDB /* Sources */,
+				5873F27E2C0DEBA300BD2BDB /* Frameworks */,
+				5873F27F2C0DEBA300BD2BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5873F2862C0DEBA300BD2BDB /* PBXTargetDependency */,
+			);
+			name = HiStockTests;
+			productName = HiStockTests;
+			productReference = 5873F2812C0DEBA300BD2BDB /* HiStockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		58BDFBAD2BB40A04006AC994 /* HiStock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58BDFBBE2BB40A07006AC994 /* Build configuration list for PBXNativeTarget "HiStock" */;
@@ -100,6 +148,10 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					5873F2802C0DEBA300BD2BDB = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 58BDFBAD2BB40A04006AC994;
+					};
 					58BDFBAD2BB40A04006AC994 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -119,11 +171,19 @@
 			projectRoot = "";
 			targets = (
 				58BDFBAD2BB40A04006AC994 /* HiStock */,
+				5873F2802C0DEBA300BD2BDB /* HiStockTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5873F27F2C0DEBA300BD2BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58BDFBAC2BB40A04006AC994 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,6 +196,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5873F27D2C0DEBA300BD2BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5873F2842C0DEBA300BD2BDB /* HiStockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58BDFBAA2BB40A04006AC994 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,7 +216,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5873F2862C0DEBA300BD2BDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58BDFBAD2BB40A04006AC994 /* HiStock */;
+			targetProxy = 5873F2852C0DEBA300BD2BDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5873F2882C0DEBA300BD2BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E98D6ZNGDP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = woojin.HiStockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HiStock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HiStock";
+			};
+			name = Debug;
+		};
+		5873F2892C0DEBA300BD2BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E98D6ZNGDP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = woojin.HiStockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HiStock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HiStock";
+			};
+			name = Release;
+		};
 		58BDFBBC2BB40A07006AC994 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -339,6 +453,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5873F2872C0DEBA300BD2BDB /* Build configuration list for PBXNativeTarget "HiStockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5873F2882C0DEBA300BD2BDB /* Debug */,
+				5873F2892C0DEBA300BD2BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		58BDFBA92BB40A04006AC994 /* Build configuration list for PBXProject "HiStock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
