@@ -8,9 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5873F2842C0DEBA300BD2BDB /* HiStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */; };
+		5873F28E2C146FD600BD2BDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5873F28D2C146FD600BD2BDB /* GoogleService-Info.plist */; };
+		5873F2912C1471A300BD2BDB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5873F2902C1471A300BD2BDB /* FirebaseAnalytics */; };
+		5873F2932C1471A300BD2BDB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5873F2922C1471A300BD2BDB /* FirebaseAnalyticsSwift */; };
+		5873F2952C1471A300BD2BDB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5873F2942C1471A300BD2BDB /* FirebaseCrashlytics */; };
+		5873F2972C1471A300BD2BDB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5873F2962C1471A300BD2BDB /* FirebaseFirestore */; };
+		5873F2992C1471A300BD2BDB /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5873F2982C1471A300BD2BDB /* FirebaseFirestoreSwift */; };
+		5873F29B2C14729000BD2BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F29A2C14729000BD2BDB /* AppDelegate.swift */; };
 		58BDFBB22BB40A04006AC994 /* HiStockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB12BB40A04006AC994 /* HiStockApp.swift */; };
 		58BDFBB42BB40A04006AC994 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB32BB40A04006AC994 /* ContentView.swift */; };
-		58BDFBB62BB40A04006AC994 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB52BB40A04006AC994 /* Item.swift */; };
 		58BDFBB82BB40A07006AC994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58BDFBB72BB40A07006AC994 /* Assets.xcassets */; };
 		58BDFBBB2BB40A07006AC994 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58BDFBBA2BB40A07006AC994 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -28,10 +34,11 @@
 /* Begin PBXFileReference section */
 		5873F2812C0DEBA300BD2BDB /* HiStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiStockTests.swift; sourceTree = "<group>"; };
+		5873F28D2C146FD600BD2BDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5873F29A2C14729000BD2BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58BDFBAE2BB40A04006AC994 /* HiStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BDFBB12BB40A04006AC994 /* HiStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiStockApp.swift; sourceTree = "<group>"; };
 		58BDFBB32BB40A04006AC994 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		58BDFBB52BB40A04006AC994 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		58BDFBB72BB40A07006AC994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58BDFBBA2BB40A07006AC994 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +55,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5873F2992C1471A300BD2BDB /* FirebaseFirestoreSwift in Frameworks */,
+				5873F2952C1471A300BD2BDB /* FirebaseCrashlytics in Frameworks */,
+				5873F2972C1471A300BD2BDB /* FirebaseFirestore in Frameworks */,
+				5873F2932C1471A300BD2BDB /* FirebaseAnalyticsSwift in Frameworks */,
+				5873F2912C1471A300BD2BDB /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +72,24 @@
 				5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */,
 			);
 			path = HiStockTests;
+			sourceTree = "<group>";
+		};
+		5873F28A2C146F6900BD2BDB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5873F28D2C146FD600BD2BDB /* GoogleService-Info.plist */,
+				58BDFBB72BB40A07006AC994 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5873F29C2C147E4D00BD2BDB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5873F29A2C14729000BD2BDB /* AppDelegate.swift */,
+				58BDFBB12BB40A04006AC994 /* HiStockApp.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		58BDFBA52BB40A04006AC994 = {
@@ -83,10 +113,9 @@
 		58BDFBB02BB40A04006AC994 /* HiStock */ = {
 			isa = PBXGroup;
 			children = (
-				58BDFBB12BB40A04006AC994 /* HiStockApp.swift */,
+				5873F29C2C147E4D00BD2BDB /* Application */,
 				58BDFBB32BB40A04006AC994 /* ContentView.swift */,
-				58BDFBB52BB40A04006AC994 /* Item.swift */,
-				58BDFBB72BB40A07006AC994 /* Assets.xcassets */,
+				5873F28A2C146F6900BD2BDB /* Resources */,
 				58BDFBB92BB40A07006AC994 /* Preview Content */,
 			);
 			path = HiStock;
@@ -134,6 +163,13 @@
 			dependencies = (
 			);
 			name = HiStock;
+			packageProductDependencies = (
+				5873F2902C1471A300BD2BDB /* FirebaseAnalytics */,
+				5873F2922C1471A300BD2BDB /* FirebaseAnalyticsSwift */,
+				5873F2942C1471A300BD2BDB /* FirebaseCrashlytics */,
+				5873F2962C1471A300BD2BDB /* FirebaseFirestore */,
+				5873F2982C1471A300BD2BDB /* FirebaseFirestoreSwift */,
+			);
 			productName = HiStock;
 			productReference = 58BDFBAE2BB40A04006AC994 /* HiStock.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +202,9 @@
 				Base,
 			);
 			mainGroup = 58BDFBA52BB40A04006AC994;
+			packageReferences = (
+				5873F28F2C1471A300BD2BDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 58BDFBAF2BB40A04006AC994 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,6 +229,7 @@
 			files = (
 				58BDFBBB2BB40A07006AC994 /* Preview Assets.xcassets in Resources */,
 				58BDFBB82BB40A07006AC994 /* Assets.xcassets in Resources */,
+				5873F28E2C146FD600BD2BDB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5873F29B2C14729000BD2BDB /* AppDelegate.swift in Sources */,
 				58BDFBB42BB40A04006AC994 /* ContentView.swift in Sources */,
-				58BDFBB62BB40A04006AC994 /* Item.swift in Sources */,
 				58BDFBB22BB40A04006AC994 /* HiStockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = woojin.HiStock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woojin.histock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -438,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = woojin.HiStock;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woojin.histock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -481,6 +521,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5873F28F2C1471A300BD2BDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5873F2902C1471A300BD2BDB /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5873F28F2C1471A300BD2BDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5873F2922C1471A300BD2BDB /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5873F28F2C1471A300BD2BDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		5873F2942C1471A300BD2BDB /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5873F28F2C1471A300BD2BDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		5873F2962C1471A300BD2BDB /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5873F28F2C1471A300BD2BDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5873F2982C1471A300BD2BDB /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5873F28F2C1471A300BD2BDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58BDFBA62BB40A04006AC994 /* Project object */;
 }
