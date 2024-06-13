@@ -16,7 +16,13 @@ struct HomeView: View {
     }
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical) {
+            HStack(alignment: .center, spacing: 11, content: {
+                MarketInformationView(store: store, marketType: .kospi)
+                MarketInformationView(store: store, marketType: .kosdaq)
+            })
+            .padding(.horizontal, 16)
+        }   
     }
 }
 

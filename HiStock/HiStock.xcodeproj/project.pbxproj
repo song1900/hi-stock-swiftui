@@ -18,6 +18,8 @@
 		5873F29F2C1482A600BD2BDB /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5873F29E2C1482A600BD2BDB /* ComposableArchitecture */; };
 		5873F2A22C15F23300BD2BDB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2A12C15F23300BD2BDB /* HomeView.swift */; };
 		5873F2A72C15F27200BD2BDB /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2A62C15F27200BD2BDB /* HomeReducer.swift */; };
+		5873F2AA2C15FEE600BD2BDB /* MarketInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2A92C15FEE600BD2BDB /* MarketInformationView.swift */; };
+		5873F2AD2C16053A00BD2BDB /* MarketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2AC2C16053A00BD2BDB /* MarketType.swift */; };
 		58BDFBB22BB40A04006AC994 /* HiStockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB12BB40A04006AC994 /* HiStockApp.swift */; };
 		58BDFBB82BB40A07006AC994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58BDFBB72BB40A07006AC994 /* Assets.xcassets */; };
 		58BDFBBB2BB40A07006AC994 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58BDFBBA2BB40A07006AC994 /* Preview Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		5873F29A2C14729000BD2BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5873F2A12C15F23300BD2BDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5873F2A62C15F27200BD2BDB /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
+		5873F2A92C15FEE600BD2BDB /* MarketInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketInformationView.swift; sourceTree = "<group>"; };
+		5873F2AC2C16053A00BD2BDB /* MarketType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketType.swift; sourceTree = "<group>"; };
 		58BDFBAE2BB40A04006AC994 /* HiStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BDFBB12BB40A04006AC994 /* HiStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiStockApp.swift; sourceTree = "<group>"; };
 		58BDFBB72BB40A07006AC994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,8 +129,17 @@
 			isa = PBXGroup;
 			children = (
 				5873F2A12C15F23300BD2BDB /* HomeView.swift */,
+				5873F2A92C15FEE600BD2BDB /* MarketInformationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5873F2AB2C16051D00BD2BDB /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5873F2AC2C16053A00BD2BDB /* MarketType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		58BDFBA52BB40A04006AC994 = {
@@ -153,6 +166,7 @@
 				5873F29C2C147E4D00BD2BDB /* Application */,
 				5873F28A2C146F6900BD2BDB /* Resources */,
 				5873F2A02C15F05B00BD2BDB /* Presentaion */,
+				5873F2AB2C16051D00BD2BDB /* Enums */,
 				58BDFBB92BB40A07006AC994 /* Preview Content */,
 			);
 			path = HiStock;
@@ -288,6 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5873F29B2C14729000BD2BDB /* AppDelegate.swift in Sources */,
+				5873F2AD2C16053A00BD2BDB /* MarketType.swift in Sources */,
+				5873F2AA2C15FEE600BD2BDB /* MarketInformationView.swift in Sources */,
 				5873F2A22C15F23300BD2BDB /* HomeView.swift in Sources */,
 				58BDFBB22BB40A04006AC994 /* HiStockApp.swift in Sources */,
 				5873F2A72C15F27200BD2BDB /* HomeReducer.swift in Sources */,
