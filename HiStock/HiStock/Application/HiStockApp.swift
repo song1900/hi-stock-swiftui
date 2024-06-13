@@ -19,7 +19,12 @@ struct HiStockApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView(store: HiStockApp.store)
+            TabView {
+                HomeView(store: HiStockApp.store)
+                    .tabItem {
+                        Text("홈")
+                    }
+            }
         }
     }
 }
