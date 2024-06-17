@@ -48,7 +48,7 @@ struct MarketInformationView: View {
 
 #Preview {
     MarketInformationView(
-        store: HiStockApp.store,
+        store: HiStockApp.homeStore,
         marketType: .kospi
     )
 }
