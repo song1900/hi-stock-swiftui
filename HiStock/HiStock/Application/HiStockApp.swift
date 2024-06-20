@@ -12,17 +12,26 @@ import ComposableArchitecture
 struct HiStockApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    static let store = Store(initialState: HomeReducer.State()) {
+    static let homeStore = Store(initialState: HomeReducer.State()) {
         HomeReducer()
+            ._printChanges()
+    }
+    
+    static let searchStore = Store(initialState: SearchReducer.State()) {
+        SearchReducer()
             ._printChanges()
     }
     
     var body: some Scene {
         WindowGroup {
             TabView {
-                HomeView(store: HiStockApp.store)
+                HomeView(store: HiStockApp.homeStore)
                     .tabItem {
                         Text("홈")
+                    }
+                SearchView(store: HiStockApp.searchStore)
+                    .tabItem {
+                        Text("검색")
                     }
             }
         }

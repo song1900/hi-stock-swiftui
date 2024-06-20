@@ -68,5 +68,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(store: HiStockApp.store)
+    HomeView(store: HiStockApp.homeStore)
 }
