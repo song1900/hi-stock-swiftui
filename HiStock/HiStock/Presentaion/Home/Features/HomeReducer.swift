@@ -12,12 +12,12 @@ struct HomeReducer {
     @ObservableState
     struct State: Equatable {
         var upStocks: [Stock] = [
-            Stock(title: "주식1", price: 19999, code: "000001", market: .kospi, fluctuationRate: 18.00, thema: nil),
-            Stock(title: "주식2", price: 199990, code: "000002", market: .kospi, fluctuationRate: 9.00 ,thema: nil)
+            Stock(title: "주식1", code: "000002", price: 12313, market: .kosdaq, fluctuationRate: 18.00, themas: nil),
+            Stock(title: "주식2", code: "000014", price: 11241233, market: .kosdaq, fluctuationRate: 8.00, themas: nil)
         ]
         var downStocks: [Stock] = [
-            Stock(title: "주식1", price: 2222222, code: "000003", market: .kosdaq, fluctuationRate: 10.09, thema: nil),
-            Stock(title: "주식2", price: 13130, code: "000004", market: .kospi, fluctuationRate: 0.5, thema: nil)
+            Stock(title: "주식2", code: "000034", price: 812433, market: .kosdaq, fluctuationRate: 28.00, themas: nil),
+            Stock(title: "주식2", code: "000044", price: 11241233, market: .kosdaq, fluctuationRate: 8.00, themas: nil)
         ]
     }
 }

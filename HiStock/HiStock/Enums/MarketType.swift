@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MarketType: String {
+enum MarketType: String, Codable {
     case kospi = "KOSPI"
     case kosdaq = "KOSDAQ"
 }
