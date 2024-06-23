@@ -15,11 +15,13 @@ struct SearchReducer {
     struct State: Equatable {
         var searchText: String = ""
         var stocks: [Stock] = []
+        var isLoading = false
     }
     
     enum Action: ViewAction {
         case performSearch
-        case searchResponse(Result<[Stock], Error>)
+        case searchResponse(TaskResult<[Stock]>)
+        case factResponse
         case view(View)
         
         @CasePathable
@@ -33,20 +35,27 @@ struct SearchReducer {
         Reduce { state, action in
             switch action {
             case .view(.binding): return .none
+            case .factResponse:
+                state.isLoading = false
+                return .none
             case .performSearch:
+                state.isLoading = true
                 return .run { [searchText = state.searchText] send in
                     await send(
                         .searchResponse(
-                            Result {
-                                try await firestoreClient.fetchStocks(thema: searchText)
+                            TaskResult { try await
+                                firestoreClient.fetchStocks(thema: searchText)
                             }
                         )
                     )
                 }
             case let .searchResponse(.failure(error)):
-                print("ERROR: \(error)")
+                state.isLoading = false
+                print("✨ ERROR: \(error)")
                 return .none
+                
             case let .searchResponse(.success(response)):
+                state.isLoading = false
                 state.stocks = response
                 response.forEach { print("✅ \($0)") }
                 return .none
