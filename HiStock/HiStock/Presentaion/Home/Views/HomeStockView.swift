@@ -24,7 +24,7 @@ struct HomeStockView: View {
     }
     
     var title: some View {
-        Text(stock.title)
+        Text(stock.title ?? "")
             .fontWeight(.bold)
     }
     
@@ -48,7 +48,7 @@ struct HomeStockView: View {
 
 #Preview {
     VStack {
-        HomeStockView(stock: Stock(title: "주식타이틀", price: 1999, code: "202020", market: .kospi, fluctuationRate: 20, thema: ["테마1"]), change: .up)
-        HomeStockView(stock: Stock(title: "주식타이틀", price: 1999, code: "202020", market: .kospi, fluctuationRate: 20, thema: ["테마1"]), change: .down)
+        HomeStockView(stock: Stock(title: "주식2", code: "000044", price: 11241233, market: .kosdaq, fluctuationRate: 8.00, themas: nil), change: .up)
+        HomeStockView(stock: Stock(title: "주식313", code: "000334", price: 1333, market: .kospi, fluctuationRate: 8.00, themas: nil), change: .down)
     }
 }

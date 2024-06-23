@@ -19,7 +19,6 @@ struct HiStockApp: App {
     
     static let searchStore = Store(initialState: SearchReducer.State()) {
         SearchReducer()
-            ._printChanges()
     }
     
     var body: some Scene {

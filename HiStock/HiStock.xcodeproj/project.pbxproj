@@ -12,6 +12,8 @@
 		584459F62C1C7EE900A0F33F /* StockChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584459F52C1C7EE900A0F33F /* StockChange.swift */; };
 		584459FB2C20917500A0F33F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584459FA2C20917500A0F33F /* SearchView.swift */; };
 		584459FD2C2091C100A0F33F /* SearchReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584459FC2C2091C100A0F33F /* SearchReducer.swift */; };
+		58445A052C24094600A0F33F /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58445A042C24094600A0F33F /* FirestoreManager.swift */; };
+		58445A092C24217400A0F33F /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58445A082C24217400A0F33F /* FirestoreClient.swift */; };
 		5873F2842C0DEBA300BD2BDB /* HiStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */; };
 		5873F28E2C146FD600BD2BDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5873F28D2C146FD600BD2BDB /* GoogleService-Info.plist */; };
 		5873F2912C1471A300BD2BDB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5873F2902C1471A300BD2BDB /* FirebaseAnalytics */; };
@@ -46,6 +48,8 @@
 		584459F52C1C7EE900A0F33F /* StockChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockChange.swift; sourceTree = "<group>"; };
 		584459FA2C20917500A0F33F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		584459FC2C2091C100A0F33F /* SearchReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReducer.swift; sourceTree = "<group>"; };
+		58445A042C24094600A0F33F /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		58445A082C24217400A0F33F /* FirestoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
 		5873F2812C0DEBA300BD2BDB /* HiStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5873F2832C0DEBA300BD2BDB /* HiStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiStockTests.swift; sourceTree = "<group>"; };
 		5873F28D2C146FD600BD2BDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -123,6 +127,39 @@
 				584459FA2C20917500A0F33F /* SearchView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		58445A022C2408F300A0F33F /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				58445A032C24090A00A0F33F /* Services */,
+				58445A062C24213D00A0F33F /* DataSource */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		58445A032C24090A00A0F33F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				58445A042C24094600A0F33F /* FirestoreManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		58445A062C24213D00A0F33F /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				58445A072C24215700A0F33F /* Firestore */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		58445A072C24215700A0F33F /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				58445A082C24217400A0F33F /* FirestoreClient.swift */,
+			);
+			path = Firestore;
 			sourceTree = "<group>";
 		};
 		5873F2822C0DEBA300BD2BDB /* HiStockTests */ = {
@@ -220,6 +257,7 @@
 				5873F29C2C147E4D00BD2BDB /* Application */,
 				5873F28A2C146F6900BD2BDB /* Resources */,
 				5873F2A02C15F05B00BD2BDB /* Presentaion */,
+				58445A022C2408F300A0F33F /* Dependency */,
 				584459F12C1C63FA00A0F33F /* Domain */,
 				5873F2AB2C16051D00BD2BDB /* Enums */,
 				58BDFBB92BB40A07006AC994 /* Preview Content */,
@@ -363,8 +401,10 @@
 				5873F2AA2C15FEE600BD2BDB /* MarketInformationView.swift in Sources */,
 				584459F62C1C7EE900A0F33F /* StockChange.swift in Sources */,
 				5873F2A22C15F23300BD2BDB /* HomeView.swift in Sources */,
+				58445A052C24094600A0F33F /* FirestoreManager.swift in Sources */,
 				584459F02C1C636A00A0F33F /* HomeStockView.swift in Sources */,
 				584459FD2C2091C100A0F33F /* SearchReducer.swift in Sources */,
+				58445A092C24217400A0F33F /* FirestoreClient.swift in Sources */,
 				58BDFBB22BB40A04006AC994 /* HiStockApp.swift in Sources */,
 				5873F2A72C15F27200BD2BDB /* HomeReducer.swift in Sources */,
 			);

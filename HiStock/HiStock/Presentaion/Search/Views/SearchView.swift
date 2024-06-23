@@ -10,9 +10,6 @@ import ComposableArchitecture
 
 struct SearchView: View {
     @State var store: StoreOf<SearchReducer>
-    init(store: StoreOf<SearchReducer>) {
-        self.store = store
-    }
     
     var body: some View {
         VStack(spacing: 0, content: {
@@ -31,7 +28,7 @@ extension SearchView {
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
                 .onSubmit {
-                    print(store.searchText)
+                    store.send(.performSearch)
                 }
         })
         .frame(height: 40)
