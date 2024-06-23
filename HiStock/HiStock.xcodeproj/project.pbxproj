@@ -26,6 +26,7 @@
 		5873F2A72C15F27200BD2BDB /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2A62C15F27200BD2BDB /* HomeReducer.swift */; };
 		5873F2AA2C15FEE600BD2BDB /* MarketInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2A92C15FEE600BD2BDB /* MarketInformationView.swift */; };
 		5873F2AD2C16053A00BD2BDB /* MarketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873F2AC2C16053A00BD2BDB /* MarketType.swift */; };
+		58B2BF912C26611200BA8165 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF902C26611200BA8165 /* SearchTests.swift */; };
 		58B2BF932C28540B00BA8165 /* MockFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */; };
 		58B2BF942C28540B00BA8165 /* MockFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */; };
 		58BDFBB22BB40A04006AC994 /* HiStockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BDFBB12BB40A04006AC994 /* HiStockApp.swift */; };
@@ -58,6 +59,7 @@
 		5873F2A62C15F27200BD2BDB /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
 		5873F2A92C15FEE600BD2BDB /* MarketInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketInformationView.swift; sourceTree = "<group>"; };
 		5873F2AC2C16053A00BD2BDB /* MarketType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketType.swift; sourceTree = "<group>"; };
+		58B2BF902C26611200BA8165 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirestoreManager.swift; sourceTree = "<group>"; };
 		58BDFBAE2BB40A04006AC994 /* HiStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BDFBB12BB40A04006AC994 /* HiStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiStockApp.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B2BF912C26611200BA8165 /* SearchTests.swift in Sources */,
 				58B2BF942C28540B00BA8165 /* MockFirestoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
