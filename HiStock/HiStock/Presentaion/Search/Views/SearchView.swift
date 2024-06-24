@@ -14,7 +14,11 @@ struct SearchView: View {
     var body: some View {
         VStack(spacing: 0) {
             searchTextField
-            resultListView
+            if store.stocks.isEmpty {
+                resultEmptyView
+            } else {
+                resultListView
+            }
             Spacer()
         }
     }
@@ -35,6 +39,9 @@ extension SearchView {
         .overlay(alignment: .bottom) {
             Divider()
         }
+        .onAppear {
+            UITextField.appearance().clearButtonMode = .whileEditing
+        }
     }
     
     var resultListView: some View {
@@ -43,6 +50,14 @@ extension SearchView {
                 SearchResultListCell(stock: $0)
             }
         }.listStyle(.plain)
+    }
+    
+    var resultEmptyView: some View {
+        Text("검색된 주식이 없습니다.")
+            .font(.system(size: 20, weight: .semibold))
+            .foregroundStyle(Color.gray)
+            .padding(.top, 80)
+            .opacity(store.searchPerformed ? 1 : 0)
     }
 }
 
