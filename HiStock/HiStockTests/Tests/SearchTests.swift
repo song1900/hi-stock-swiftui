@@ -22,6 +22,7 @@ final class SearchTests: XCTestCase {
         }
         
         await store.send(.performSearch) {
+            $0.searchPerformed = true
             $0.isLoading = true
         }
 
