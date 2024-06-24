@@ -16,6 +16,7 @@ struct SearchReducer {
         var searchText: String = ""
         var stocks: [Stock] = []
         var isLoading = false
+        var searchPerformed = false
     }
     
     enum Action: ViewAction {
@@ -39,6 +40,7 @@ struct SearchReducer {
                 state.isLoading = false
                 return .none
             case .performSearch:
+                state.searchPerformed = true
                 state.isLoading = true
                 return .run { [searchText = state.searchText] send in
                     await send(

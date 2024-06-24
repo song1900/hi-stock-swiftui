@@ -46,3 +46,9 @@ struct Stock: Codable, Equatable, Identifiable {
         self.themas = themas
     }
 }
+
+extension Stock {
+    func formatFluctuationRateString() -> String {
+        String(format: "%.2f", fluctuationRate ?? 0)
+    }
+}
