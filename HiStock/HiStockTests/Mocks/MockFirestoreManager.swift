@@ -6,7 +6,6 @@
 //
 
 import FirebaseFirestore
-@testable import HiStock
 
 final class MockFirestoreManager: FirestoreManaging {
     
