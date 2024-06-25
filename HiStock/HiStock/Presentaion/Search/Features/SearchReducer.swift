@@ -22,7 +22,6 @@ struct SearchReducer {
     enum Action: ViewAction {
         case performSearch
         case searchResponse(TaskResult<[Stock]>)
-        case factResponse
         case view(View)
         
         @CasePathable
@@ -36,9 +35,6 @@ struct SearchReducer {
         Reduce { state, action in
             switch action {
             case .view(.binding): return .none
-            case .factResponse:
-                state.isLoading = false
-                return .none
             case .performSearch:
                 state.searchPerformed = true
                 state.isLoading = true

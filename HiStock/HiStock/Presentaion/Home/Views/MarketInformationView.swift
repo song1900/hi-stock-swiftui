@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct MarketInformationView: View {
     @State var store: StoreOf<HomeReducer>
-    @State var marketType: MarketType
+    var marketType: MarketType
     
     var body: some View {
         VStack(spacing: 0) {
@@ -29,21 +29,32 @@ struct MarketInformationView: View {
         }.frame(height: 44)
     }
     
-    var contents: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("3,000.00")
-                Text("6.25 +0.30%")
-                    .foregroundStyle(.red)
-                Spacer()
-            }
-            .padding([.leading, .top], 10)
-            Spacer()
-        }
-        .background {
-            Color.white
+    func priceText(market: Market?) -> some View {
+        Group {
+            let price = "\(market?.price ?? 0)"
+            Text(price) 
         }
     }
+    
+    var contents: some View {
+        Group {
+            let market = store.markets.first(where: { $0.type == marketType })
+            HStack {
+                VStack(alignment: .leading, spacing: 0) {
+                    priceText(market: market)
+                    Text("6.25 +0.30%")
+                        .foregroundStyle(.red)
+                    Spacer()
+                }
+                .padding([.leading, .top], 10)
+                Spacer()
+            }
+            .background { Color.white }
+            .redacted(reason: market != nil ? [] : .placeholder)
+        }
+        
+    }
+                
 }
 
 #Preview {
