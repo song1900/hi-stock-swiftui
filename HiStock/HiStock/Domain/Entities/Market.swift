@@ -22,4 +22,8 @@ struct Market: Codable, Equatable {
         price = try? container.decodeIfPresent(Double.self, forKey: .price)
         date = try? container.decodeIfPresent(String.self, forKey: .date)
     }
+    
+    init(type: MarketType?) {
+        self.type = type
+    }
 }
