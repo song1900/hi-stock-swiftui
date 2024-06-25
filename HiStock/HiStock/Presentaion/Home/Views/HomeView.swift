@@ -31,6 +31,9 @@ struct HomeView: View {
                 }
             })
         }
+        .onAppear(perform: {
+            store.send(.performGetMarket)
+        })
     }
     
     func stocksScrollView(change: StockChange) -> some View {
