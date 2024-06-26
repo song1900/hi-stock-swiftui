@@ -47,7 +47,8 @@ extension SearchView {
     var resultListView: some View {
         List {
             ForEach($store.stocks) {
-                SearchResultListCell(stock: $0)
+                SearchResultListCell(store: store, stock: $0)
+                    
             }
         }.listStyle(.plain)
     }
