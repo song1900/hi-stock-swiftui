@@ -12,9 +12,15 @@ struct SearchResultListCell: View {
     @Binding var stock: Stock
     
     var body: some View {
-        HStack(spacing: 12) {
-            Text(stock.title ?? "")
-                .fontWeight(.bold)
+        HStack(spacing: 13) {
+            VStack(alignment: .leading, spacing: 1) {
+                Text(stock.code ?? "")
+                    .font(.system(size: 10, weight: .semibold))
+                    .foregroundStyle(Color.gray)
+                Text(stock.title ?? "")
+                    .fontWeight(.bold)
+            }
+            
             Spacer()
             Group {
                 Text("\(stock.price?.close ?? 0)")
