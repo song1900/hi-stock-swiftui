@@ -54,13 +54,16 @@ struct SearchResultListCell: View {
     
     func themaScrollView(themas: [String]) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(alignment: .center,
-                       spacing: 8,
-                       pinnedViews: .sectionHeaders) {
-                ForEach(themas, id: \.self) {
-                    Text($0)
-                        .font(.system(size: 10, weight: .medium))
-                        .randomBackgroundColor()
+            LazyHStack(alignment: .center, spacing: 8) {
+                ForEach(themas, id: \.self) { thema in
+                    Button(action: {
+                        store.send(.themaButtonTapped(thema: thema))
+                    }, label: {
+                        Text(thema)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundStyle(Color.black)
+                            .randomBackgroundColor()
+                    })
                 }
             }.padding(.horizontal, 12)
         }
