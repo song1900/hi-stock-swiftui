@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-enum StockChange {
-    case up
-    case down
-    case unchanged
+enum StockChange: Int, Codable {
+    case up = 1
+    case down = 2
+    case unchanged = 0
     
     var color: Color {
         switch self {
