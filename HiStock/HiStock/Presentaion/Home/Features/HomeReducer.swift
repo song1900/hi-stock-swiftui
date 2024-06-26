@@ -16,12 +16,12 @@ struct HomeReducer {
         var markets: [Market] = []
         
         var upStocks: [Stock] = [
-            Stock(title: "주식1", code: "000002", price: 12313, market: .kosdaq, fluctuationRate: 18.00, themas: nil),
-            Stock(title: "주식2", code: "000014", price: 11241233, market: .kosdaq, fluctuationRate: 8.00, themas: nil)
+            Stock(title: "주식1", code: "000002", market: .kosdaq, themas: nil),
+            Stock(title: "주식2", code: "000014", market: .kosdaq, themas: nil)
         ]
         var downStocks: [Stock] = [
-            Stock(title: "주식2", code: "000034", price: 812433, market: .kosdaq, fluctuationRate: 28.00, themas: nil),
-            Stock(title: "주식2", code: "000044", price: 11241233, market: .kosdaq, fluctuationRate: 8.00, themas: nil)
+            Stock(title: "주식2", code: "000034", market: .kosdaq, themas: nil),
+            Stock(title: "주식2", code: "000044", market: .kosdaq, themas: nil)
         ]
     }
     

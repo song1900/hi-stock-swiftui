@@ -29,6 +29,7 @@
 		58A6128F2C2ACAE700ADC1DA /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6128E2C2ACAE700ADC1DA /* Market.swift */; };
 		58A612942C2B043600ADC1DA /* MockFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */; };
 		58A612962C2B049900ADC1DA /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A612952C2B049900ADC1DA /* HomeTests.swift */; };
+		58A612992C2BFCF100ADC1DA /* RandomColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A612982C2BFCF100ADC1DA /* RandomColorModifier.swift */; };
 		58B2BF912C26611200BA8165 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF902C26611200BA8165 /* SearchTests.swift */; };
 		58B2BF942C28540B00BA8165 /* MockFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */; };
 		58B2BF982C294AB900BA8165 /* SearchResultListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF972C294AB900BA8165 /* SearchResultListCell.swift */; };
@@ -64,6 +65,7 @@
 		5873F2AC2C16053A00BD2BDB /* MarketType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketType.swift; sourceTree = "<group>"; };
 		58A6128E2C2ACAE700ADC1DA /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		58A612952C2B049900ADC1DA /* HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTests.swift; sourceTree = "<group>"; };
+		58A612982C2BFCF100ADC1DA /* RandomColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColorModifier.swift; sourceTree = "<group>"; };
 		58B2BF902C26611200BA8165 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirestoreManager.swift; sourceTree = "<group>"; };
 		58B2BF972C294AB900BA8165 /* SearchResultListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListCell.swift; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		58A612972C2BFC0500ADC1DA /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				58A612982C2BFCF100ADC1DA /* RandomColorModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		58B2BF952C28553200BA8165 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +299,7 @@
 				58445A022C2408F300A0F33F /* Dependency */,
 				584459F12C1C63FA00A0F33F /* Domain */,
 				5873F2AB2C16051D00BD2BDB /* Enums */,
+				58A612972C2BFC0500ADC1DA /* ViewModifiers */,
 				58BDFBB92BB40A07006AC994 /* Preview Content */,
 			);
 			path = HiStock;
@@ -434,6 +445,7 @@
 				584459F62C1C7EE900A0F33F /* StockChange.swift in Sources */,
 				5873F2A22C15F23300BD2BDB /* HomeView.swift in Sources */,
 				58445A052C24094600A0F33F /* FirestoreManager.swift in Sources */,
+				58A612992C2BFCF100ADC1DA /* RandomColorModifier.swift in Sources */,
 				584459F02C1C636A00A0F33F /* HomeStockView.swift in Sources */,
 				584459FD2C2091C100A0F33F /* SearchReducer.swift in Sources */,
 				58A6128F2C2ACAE700ADC1DA /* Market.swift in Sources */,

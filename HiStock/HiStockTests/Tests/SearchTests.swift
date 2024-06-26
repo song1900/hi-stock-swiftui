@@ -28,9 +28,28 @@ final class SearchTests: XCTestCase {
 
         await store.receive(\.searchResponse.success) {
             $0.isLoading = false
-            $0.stocks = [Stock(title: "테스트 주식", code: nil, price: nil, market: nil, fluctuationRate: nil, themas: ["테스트"])]
+            $0.stocks = [Stock(title: "테스트 주식", code: nil, market: nil, themas: ["테스트"])]
         }
-
+    }
+    
+    func test테마클릭시_검색어변경후_데이터반환() async {
+        let store = TestStore(initialState: SearchReducer.State()) {
+            SearchReducer()
+        }
+        
+        await store.send(.themaButtonTapped(thema: "테스트")) {
+            $0.searchText = "테스트"
+        }
+        
+        await store.receive(\.performSearch) {
+            $0.searchPerformed = true
+            $0.isLoading = true
+        }
+        
+        await store.receive(\.searchResponse.success) {
+            $0.isLoading = false
+            $0.stocks = [Stock(title: "테스트 주식", code: nil, market: nil, themas: ["테스트"])]
+        }
     }
 
 }
