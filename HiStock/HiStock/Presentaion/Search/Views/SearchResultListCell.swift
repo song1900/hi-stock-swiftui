@@ -22,10 +22,13 @@ struct SearchResultListCell: View {
             }
             
             Spacer()
-            Group {
+            let updown = stock.price?.upDown ?? .unchanged
+            Group {    
                 Text("\(stock.price?.close ?? 0)")
-                Text("\(stock.formatFluctuationRateString())%")
-            }.foregroundStyle(stock.price?.upDown?.color ?? StockChange.unchanged.color)
+                Text("\(updown == .up ? "+" : "")\(stock.formatFluctuationRateString())%")
+                    .frame(width: 75, alignment: .trailing)
+            }.fontWeight(.semibold)
+            .foregroundStyle(updown.color)
         }
         .padding(.horizontal, 0)
     }
