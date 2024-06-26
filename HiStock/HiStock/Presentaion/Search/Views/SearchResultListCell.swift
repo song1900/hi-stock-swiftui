@@ -16,10 +16,10 @@ struct SearchResultListCell: View {
             Text(stock.title ?? "")
                 .fontWeight(.bold)
             Spacer()
-            Text("\(stock.price ?? 0)")
-                .foregroundStyle(StockChange.up.color)
-            Text("+\(stock.formatFluctuationRateString())%")
-                .foregroundStyle(StockChange.up.color)
+            Group {
+                Text("\(stock.price?.close ?? 0)")
+                Text("\(stock.formatFluctuationRateString())%")
+            }.foregroundStyle(stock.price?.upDown?.color ?? StockChange.unchanged.color)
         }
         .padding(.horizontal, 0)
     }
@@ -27,7 +27,7 @@ struct SearchResultListCell: View {
 
 struct SearchResultListCell_Previews: PreviewProvider {
     static var previews: some View {
-        @State var previewStock = Stock(title: "테스트", code: nil, price: 9999999, market: nil, fluctuationRate: 10, themas: nil)
+        @State var previewStock = Stock(title: "테스트", code: nil, market: nil, themas: nil)
         SearchResultListCell(stock: .constant(previewStock))
     }
 }

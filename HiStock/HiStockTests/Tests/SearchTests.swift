@@ -28,7 +28,7 @@ final class SearchTests: XCTestCase {
 
         await store.receive(\.searchResponse.success) {
             $0.isLoading = false
-            $0.stocks = [Stock(title: "테스트 주식", code: nil, price: nil, market: nil, fluctuationRate: nil, themas: ["테스트"])]
+            $0.stocks = [Stock(title: "테스트 주식", code: nil, market: nil, themas: ["테스트"])]
         }
 
     }
