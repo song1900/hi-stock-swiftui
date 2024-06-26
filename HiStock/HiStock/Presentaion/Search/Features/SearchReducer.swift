@@ -22,6 +22,7 @@ struct SearchReducer {
     enum Action: ViewAction {
         case performSearch
         case searchResponse(TaskResult<[Stock]>)
+        case themaButtonTapped(thema: String)
         case view(View)
         
         @CasePathable
@@ -35,6 +36,11 @@ struct SearchReducer {
         Reduce { state, action in
             switch action {
             case .view(.binding): return .none
+            case let .themaButtonTapped(thema):
+                state.searchText = thema
+                return .run { send in
+                    await send(.performSearch)
+                }
             case .performSearch:
                 state.searchPerformed = true
                 state.isLoading = true
