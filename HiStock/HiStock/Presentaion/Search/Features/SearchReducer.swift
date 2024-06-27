@@ -61,8 +61,8 @@ struct SearchReducer {
                     )
                 }
             case let .searchResponse(.failure(error)):
-                state.isLoading = false
                 Log.error("SearchResponse Error", error)
+                state.isLoading = false
                 state.alert = AlertState {
                     TextState("검색에 실패했습니다")
                 } actions: {

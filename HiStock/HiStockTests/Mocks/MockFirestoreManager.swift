@@ -11,13 +11,15 @@ import FirebaseFirestore
 final class MockFirestoreManager: FirestoreManaging {
     
     func fetchStocks(thema: String) async throws -> [Stock] {
-        return [Stock(title: "테스트 주식", code: nil, market: nil, themas: [thema])]
+        if thema == "실패" {
+            throw NSError(domain: "테스트 에러", code: 1)
+        } else {
+            return [Stock(title: "테스트 주식", code: nil, market: nil, themas: [thema])]
+        }
+        
     }
     
     func fetchMakets() async throws -> [Market] {
-        return [
-            Market(type: .kospi),
-            Market(type: .kosdaq)
-        ]
+        [ Market(type: .kospi), Market(type: .kosdaq) ]
     }
 }
