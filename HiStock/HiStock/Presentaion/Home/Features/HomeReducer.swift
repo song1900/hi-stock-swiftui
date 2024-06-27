@@ -49,7 +49,7 @@ struct HomeReducer {
                 return .none
                 
             case let .getMarketResponse(.failure(error)):
-                print("✨ ERROR: \(error)")
+                Log.error("performGetMarket Error", error)
                 return .none
             }
             

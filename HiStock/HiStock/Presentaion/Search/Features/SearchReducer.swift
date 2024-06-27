@@ -62,7 +62,7 @@ struct SearchReducer {
                 }
             case let .searchResponse(.failure(error)):
                 state.isLoading = false
-                print("✨ ERROR: \(error)")
+                Log.error("SearchResponse Error", error)
                 state.alert = AlertState {
                     TextState("검색에 실패했습니다")
                 } actions: {
@@ -76,13 +76,10 @@ struct SearchReducer {
                     TextState("재시도 버튼을 눌러주세요")
                 }
                 return .none
-                
             case let .searchResponse(.success(response)):
                 state.isLoading = false
                 state.stocks = response
-                response.forEach { print("✅ \($0)") }
                 return .none
-                
             case .alert(.presented(.searchResponseError)):
                 return .run { send in
                     await send(.performSearch)
