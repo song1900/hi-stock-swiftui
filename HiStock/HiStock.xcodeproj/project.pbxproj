@@ -191,6 +191,7 @@
 			children = (
 				5873F28D2C146FD600BD2BDB /* GoogleService-Info.plist */,
 				58BDFBB72BB40A07006AC994 /* Assets.xcassets */,
+				58A6129B2C2D2D5000ADC1DA /* Modifiers */,
 				58A6129A2C2D2D3700ADC1DA /* Debugging */,
 			);
 			path = Resources;
@@ -250,7 +251,6 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		58A612972C2BFC0500ADC1DA /* ViewModifiers */ = {
 		58A6129A2C2D2D3700ADC1DA /* Debugging */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,11 +259,12 @@
 			path = Debugging;
 			sourceTree = "<group>";
 		};
+		58A6129B2C2D2D5000ADC1DA /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				58A612982C2BFCF100ADC1DA /* RandomColorModifier.swift */,
 			);
-			path = ViewModifiers;
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		58B2BF952C28553200BA8165 /* Mocks */ = {
@@ -310,7 +311,6 @@
 				58445A022C2408F300A0F33F /* Dependency */,
 				584459F12C1C63FA00A0F33F /* Domain */,
 				5873F2AB2C16051D00BD2BDB /* Enums */,
-				58A612972C2BFC0500ADC1DA /* ViewModifiers */,
 				58BDFBB92BB40A07006AC994 /* Preview Content */,
 			);
 			path = HiStock;
