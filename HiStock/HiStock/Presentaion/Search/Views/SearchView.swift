@@ -12,19 +12,37 @@ struct SearchView: View {
     @State var store: StoreOf<SearchReducer>
     
     var body: some View {
-        VStack(spacing: 0) {
-            searchTextField
-            if store.stocks.isEmpty {
-                resultEmptyView
-            } else {
-                resultListView
+        ZStack {
+            VStack(spacing: 0) {
+                searchTextField
+                if store.stocks.isEmpty {
+                    resultEmptyView
+                } else {
+                    resultListView
+                }
+                Spacer()
             }
-            Spacer()
+            
+            if store.isLoading {
+                loadingView
+            }
+            
         }
+        .alert(store: store.scope(state: \.$alert, action: \.alert))
     }
 }
 
 extension SearchView {
+    var loadingView: some View {
+        ZStack {
+            Color.white.opacity(0.01)
+            ProgressView()
+                .progressViewStyle(.circular)
+                .tint(Color.orange)
+                .controlSize(.large)
+        }
+    }
+    
     var searchTextField: some View {
         HStack(alignment: .center, spacing: 4) {
             Image(systemName: "magnifyingglass")
@@ -48,13 +66,12 @@ extension SearchView {
         List {
             ForEach($store.stocks) {
                 SearchResultListCell(store: store, stock: $0)
-                    
             }
         }.listStyle(.plain)
     }
     
     var resultEmptyView: some View {
-        Text("검색된 주식이 없습니다.")
+        Text("검색된 종목이 없습니다.")
             .font(.system(size: 20, weight: .semibold))
             .foregroundStyle(Color.gray)
             .padding(.top, 80)

@@ -32,6 +32,37 @@ final class SearchTests: XCTestCase {
         }
     }
     
+    func test검색실패시_경고창노출() async {
+        let store = TestStore(initialState: SearchReducer.State()) {
+            SearchReducer()
+        }
+        
+        await store.send(\.view.binding.searchText, "실패") {
+            $0.searchText = "실패"
+        }
+        
+        await store.send(.performSearch) {
+            $0.searchPerformed = true
+            $0.isLoading = true
+        }
+        
+        await store.receive(\.searchResponse.failure) {
+            $0.isLoading = false
+            $0.alert = AlertState {
+                TextState("검색에 실패했습니다")
+            } actions: {
+                ButtonState(role: .destructive) {
+                    TextState("닫기")
+                }
+                ButtonState(action: .searchResponseError) {
+                    TextState("재시도")
+                }
+            } message: {
+                TextState("재시도 버튼을 눌러주세요")
+            }
+        } 
+    }
+    
     func test테마클릭시_검색어변경후_데이터반환() async {
         let store = TestStore(initialState: SearchReducer.State()) {
             SearchReducer()

@@ -30,6 +30,7 @@
 		58A612942C2B043600ADC1DA /* MockFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */; };
 		58A612962C2B049900ADC1DA /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A612952C2B049900ADC1DA /* HomeTests.swift */; };
 		58A612992C2BFCF100ADC1DA /* RandomColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A612982C2BFCF100ADC1DA /* RandomColorModifier.swift */; };
+		58A6129D2C2D2DBE00ADC1DA /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6129C2C2D2DBE00ADC1DA /* OSLog.swift */; };
 		58B2BF912C26611200BA8165 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF902C26611200BA8165 /* SearchTests.swift */; };
 		58B2BF942C28540B00BA8165 /* MockFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */; };
 		58B2BF982C294AB900BA8165 /* SearchResultListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B2BF972C294AB900BA8165 /* SearchResultListCell.swift */; };
@@ -66,6 +67,7 @@
 		58A6128E2C2ACAE700ADC1DA /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		58A612952C2B049900ADC1DA /* HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTests.swift; sourceTree = "<group>"; };
 		58A612982C2BFCF100ADC1DA /* RandomColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColorModifier.swift; sourceTree = "<group>"; };
+		58A6129C2C2D2DBE00ADC1DA /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		58B2BF902C26611200BA8165 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		58B2BF922C28540B00BA8165 /* MockFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirestoreManager.swift; sourceTree = "<group>"; };
 		58B2BF972C294AB900BA8165 /* SearchResultListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,8 @@
 			children = (
 				5873F28D2C146FD600BD2BDB /* GoogleService-Info.plist */,
 				58BDFBB72BB40A07006AC994 /* Assets.xcassets */,
+				58A6129B2C2D2D5000ADC1DA /* Modifiers */,
+				58A6129A2C2D2D3700ADC1DA /* Debugging */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -247,12 +251,20 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		58A612972C2BFC0500ADC1DA /* ViewModifiers */ = {
+		58A6129A2C2D2D3700ADC1DA /* Debugging */ = {
+			isa = PBXGroup;
+			children = (
+				58A6129C2C2D2DBE00ADC1DA /* OSLog.swift */,
+			);
+			path = Debugging;
+			sourceTree = "<group>";
+		};
+		58A6129B2C2D2D5000ADC1DA /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				58A612982C2BFCF100ADC1DA /* RandomColorModifier.swift */,
 			);
-			path = ViewModifiers;
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		58B2BF952C28553200BA8165 /* Mocks */ = {
@@ -299,7 +311,6 @@
 				58445A022C2408F300A0F33F /* Dependency */,
 				584459F12C1C63FA00A0F33F /* Domain */,
 				5873F2AB2C16051D00BD2BDB /* Enums */,
-				58A612972C2BFC0500ADC1DA /* ViewModifiers */,
 				58BDFBB92BB40A07006AC994 /* Preview Content */,
 			);
 			path = HiStock;
@@ -445,6 +456,7 @@
 				584459F62C1C7EE900A0F33F /* StockChange.swift in Sources */,
 				5873F2A22C15F23300BD2BDB /* HomeView.swift in Sources */,
 				58445A052C24094600A0F33F /* FirestoreManager.swift in Sources */,
+				58A6129D2C2D2DBE00ADC1DA /* OSLog.swift in Sources */,
 				58A612992C2BFCF100ADC1DA /* RandomColorModifier.swift in Sources */,
 				584459F02C1C636A00A0F33F /* HomeStockView.swift in Sources */,
 				584459FD2C2091C100A0F33F /* SearchReducer.swift in Sources */,
