@@ -13,6 +13,7 @@ struct SearchReducer {
     
     @ObservableState
     struct State: Equatable {
+        @Presents var alert: AlertState<Action.Alert>?
         var searchText: String = ""
         var stocks: [Stock] = []
         var isLoading = false
@@ -23,11 +24,17 @@ struct SearchReducer {
         case performSearch
         case searchResponse(TaskResult<[Stock]>)
         case themaButtonTapped(thema: String)
+        case alert(PresentationAction<Alert>)
         case view(View)
         
         @CasePathable
         enum View: BindableAction {
             case binding(BindingAction<State>)
+        }
+        
+        @CasePathable
+        enum Alert {
+          case searchResponseError
         }
     }
     
@@ -56,6 +63,18 @@ struct SearchReducer {
             case let .searchResponse(.failure(error)):
                 state.isLoading = false
                 print("✨ ERROR: \(error)")
+                state.alert = AlertState {
+                    TextState("검색에 실패했습니다")
+                } actions: {
+                    ButtonState(role: .destructive) {
+                        TextState("닫기")
+                    }
+                    ButtonState(action: .searchResponseError) {
+                        TextState("재시도")
+                    }
+                } message: {
+                    TextState("재시도 버튼을 눌러주세요")
+                }
                 return .none
                 
             case let .searchResponse(.success(response)):
@@ -64,6 +83,12 @@ struct SearchReducer {
                 response.forEach { print("✅ \($0)") }
                 return .none
                 
+            case .alert(.presented(.searchResponseError)):
+                return .run { send in
+                    await send(.performSearch)
+                }
+            case .alert:
+                return .none
             }
         }
     }
