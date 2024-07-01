@@ -1,7 +1,10 @@
-# 테마찾기
+# 테마찾기 2.0
 
-### UI Framework
-- SwiftUI
+### Framework
+- SwiftUI, Combine
+
+### Library
+- Firebase
 
 ### Architecture
 - [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture)
