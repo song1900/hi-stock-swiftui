@@ -13,7 +13,7 @@ struct FirestoreClient {
     static let mockFirestoreManager: FirestoreManaging = MockFirestoreManager()
 
     var fetchStocks: (_ thema: String) async throws -> [Stock]
-    var fetchUpDownStocks: (_ change: StockChange, _ limit: Int) async throws -> [Stock]
+    var fetchUpDownStocks: (_ change: StockChange, _ limit: Int) async throws -> ([Stock], StockChange)
     var fetchMarkets: () async throws -> [Market]
 }
 
@@ -23,7 +23,7 @@ extension FirestoreClient: DependencyKey {
             return try await firestoreManager.fetchStocks(thema: thema)
         }, 
         fetchUpDownStocks: { change, limit in
-            return try await firestoreManager.fetchUpDownStocks(change: change, limit: limit)
+            return (try await firestoreManager.fetchUpDownStocks(change: change, limit: limit), change)
         },
         fetchMarkets: {
             return try await firestoreManager.fetchMakets()
@@ -34,7 +34,7 @@ extension FirestoreClient: DependencyKey {
             return try await mockFirestoreManager.fetchStocks(thema: thema)
         },
         fetchUpDownStocks: { change, limit in
-            return try await firestoreManager.fetchUpDownStocks(change: change, limit: limit)
+            return (try await firestoreManager.fetchUpDownStocks(change: change, limit: limit), change)
         },
         fetchMarkets: {
             return try await mockFirestoreManager.fetchMakets()

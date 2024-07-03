@@ -33,7 +33,9 @@ struct HomeView: View {
         }
         .background(Color("app_background_color"))
         .onAppear(perform: {
-            store.send(.performGetMarket)
+            store.send(.fetchMarkets)
+            store.send(.fetchStocks(updown: .up))
+            store.send(.fetchStocks(updown: .down))
         })
     }
     
