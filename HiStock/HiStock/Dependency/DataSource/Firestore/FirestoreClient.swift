@@ -34,7 +34,7 @@ extension FirestoreClient: DependencyKey {
             return try await mockFirestoreManager.fetchStocks(thema: thema)
         },
         fetchUpDownStocks: { change, limit in
-            return (try await firestoreManager.fetchUpDownStocks(change: change, limit: limit), change)
+            return (try await mockFirestoreManager.fetchUpDownStocks(change: change, limit: limit), change)
         },
         fetchMarkets: {
             return try await mockFirestoreManager.fetchMakets()
