@@ -42,7 +42,8 @@ struct HomeView: View {
     func stocksScrollView(change: StockChange) -> some View {
         VStack(alignment: .leading, spacing: 12, content: {
             stocksScrolltitle(change: change)
-            ScrollView(.horizontal) {
+            
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10, content: {
                     switch change {
                     case .up:
@@ -63,11 +64,11 @@ struct HomeView: View {
     func stocksScrolltitle(change: StockChange) -> some View {
         Group {
             switch change {
-            case .up: Text("📈 상승")
-            case .down: Text("📉 하락")
+            case .up: Text("상승 중이에요")
+            case .down: Text("하락 중이에요")
             default: EmptyView()
             }
-        }.font(.title3)
+        }.font(.system(size: 18, weight: .bold))
         .padding(.horizontal, 16)
     }
     

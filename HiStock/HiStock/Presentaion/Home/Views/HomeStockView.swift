@@ -12,37 +12,59 @@ struct HomeStockView: View {
     var change: StockChange
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 10) {
-                title
-                fluctuationRate
-            }.padding(.leading, 16)
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 4) {
+                marketAndCode
+                VStack(alignment: .leading, spacing: 8) {
+                    title
+                    fluctuationRate
+                }
+                Spacer()
+            }
             Spacer()
-        }.frame(width: 160, height: 100)
-        .background { Color.gray }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 6)
+        .frame(width: 160, height: 100)
+        .background(Color.white)
         .cornerRadius(8)
+    }
+}
+
+extension HomeStockView {
+    var marketAndCode: some View {
+        HStack(spacing: 2) {
+            if let market = stock.market?.rawValue {
+                Text(market)
+                Text("|")
+            }
+            Text(stock.code ?? "")
+        }.font(.system(size: 10, weight: .medium))
+        .foregroundStyle(Color.gray)
+        .padding(.top, 2)
     }
     
     var title: some View {
         Text(stock.title ?? "")
-            .fontWeight(.bold)
+            .lineLimit(2)
+            .minimumScaleFactor(0.5)
+            .font(.system(size: 20, weight: .bold))
     }
     
     var fluctuationRate: some View {
         Group {
-            let fluctuationRate = String(0)
+            let fluctuationRate = stock.formatFluctuationRateString()
             switch change {
             case .up:
                 Text("+" + fluctuationRate + "%")
                     .foregroundStyle(.red)
             case .down:
-                Text("-" + fluctuationRate + "%")
+                Text(fluctuationRate + "%")
                     .foregroundStyle(.blue)
             default: EmptyView()
             }
         }
-        .fontWeight(.bold)
-        
+        .font(.system(size: 16, weight: .bold))
     }
 }
 
