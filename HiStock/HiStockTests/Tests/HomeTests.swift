@@ -17,10 +17,12 @@ final class HomeTests: XCTestCase {
             HomeReducer()
         }
         
-        await store.send(.performGetMarket)
-        await store.receive(\.getMarketResponse.success) {
+        await store.send(.fetchMarkets)
+        await store.receive(\.fetchMarketsResponse.success) {
             $0.markets = [Market(type: .kospi), Market(type: .kosdaq)]
         }
     }
+    
+    
 
 }
