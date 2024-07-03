@@ -31,6 +31,7 @@ struct HomeView: View {
                 }
             })
         }
+        .background(Color("app_background_color"))
         .onAppear(perform: {
             store.send(.performGetMarket)
         })
