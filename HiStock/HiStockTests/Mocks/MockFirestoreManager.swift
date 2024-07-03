@@ -9,6 +9,19 @@ import FirebaseFirestore
 @testable import HiStock
 
 final class MockFirestoreManager: FirestoreManaging {
+    func fetchUpDownStocks(
+        change: StockChange,
+        limit: Int
+    ) async throws -> [Stock] {
+        switch change {
+        case .up:
+            return (0..<limit).map({ Stock(title: "\($0)", code: "", market: .kospi, themas: nil) })
+        case .down:
+            return (0..<limit).map({ Stock(title: "\($0)", code: "", market: .kosdaq, themas: nil) })
+        case .unchanged:
+            throw NSError(domain: "테스트 에러", code: 1)
+        }
+    }
     
     func fetchStocks(thema: String) async throws -> [Stock] {
         if thema == "실패" {
