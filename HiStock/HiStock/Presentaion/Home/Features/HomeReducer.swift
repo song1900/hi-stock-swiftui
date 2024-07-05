@@ -14,12 +14,17 @@ struct HomeReducer {
     
     @ObservableState
     struct State: Equatable {
+        var path = StackState<Path.State>()
+        
         var markets: [Market] = []
         var upStocks: [Stock] = []
         var downStocks: [Stock] = []
     }
     
     enum Action {
+        case path(StackAction<Path.State, Path.Action>)
+        case stockTapped(Stock)
+        
         case fetchMarkets
         case fetchMarketsResponse(TaskResult<[Market]>)
         case fetchStocks(updown: StockChange)
@@ -69,8 +74,37 @@ struct HomeReducer {
             case let .fetchStocksResponse(.failure(error)):
                 Log.error("Fetch Stocks Response Failure", error)
                 return .none
+                
+            case let .path(action):
+                return .none
+                
+            case .stockTapped(let stock):
+                state.path.append(.detailItem(StockDetailFeature.State(stock: stock)))
+                return .none
             }
-            
+
+        }
+        .forEach(\.path, action: /Action.path) {
+            Path()
+        }
+    }
+}
+
+// MARK: - Path
+extension HomeReducer {
+    @Reducer
+    struct Path: Reducer {
+        @ObservableState
+        enum State: Equatable {
+            case detailItem(StockDetailFeature.State)
+        }
+        enum Action {
+            case detailItem(StockDetailFeature.Action)
+        }
+        var body: some ReducerOf<Self> {
+            Scope(state: /State.detailItem, action: /Action.detailItem) {
+                StockDetailFeature()
+            }
         }
     }
 }

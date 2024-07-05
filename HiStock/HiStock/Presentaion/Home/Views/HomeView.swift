@@ -11,32 +11,37 @@ import ComposableArchitecture
 struct HomeView: View {
     @State var store: StoreOf<HomeReducer>
     
-    init(store: StoreOf<HomeReducer>) {
-        self.store = store
-    }
-    
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVStack(alignment: .center, spacing: 20, content: {
-                HStack(alignment: .center, spacing: 11) {
-                    MarketInformationView(store: store, marketType: .kospi)
-                    MarketInformationView(store: store, marketType: .kosdaq)
-                }
-                .padding(.horizontal, 16)
-                if !store.upStocks.isEmpty {
-                    stocksScrollView(change: .up)
-                }
-                if !store.downStocks.isEmpty {
-                    stocksScrollView(change: .down)
-                }
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+            ScrollView(.vertical) {
+                LazyVStack(alignment: .center, spacing: 20, content: {
+                    HStack(alignment: .center, spacing: 11) {
+                        MarketInformationView(store: store, marketType: .kospi)
+                        MarketInformationView(store: store, marketType: .kosdaq)
+                    }
+                    .padding(.horizontal, 16)
+                    if !store.upStocks.isEmpty {
+                        stocksScrollView(change: .up)
+                    }
+                    if !store.downStocks.isEmpty {
+                        stocksScrollView(change: .down)
+                    }
+                })
+            }
+            .background(Color("app_background_color"))
+            .onAppear(perform: {
+                store.send(.fetchMarkets)
+                store.send(.fetchStocks(updown: .up))
+                store.send(.fetchStocks(updown: .down))
             })
+        } destination: { store in
+            switch store.state {
+            case .detailItem:
+                if let store = store.scope(state: \.detailItem, action: \.detailItem) {
+                    StockDetailView(store: store)
+                }
+            }
         }
-        .background(Color("app_background_color"))
-        .onAppear(perform: {
-            store.send(.fetchMarkets)
-            store.send(.fetchStocks(updown: .up))
-            store.send(.fetchStocks(updown: .down))
-        })
     }
     
     func stocksScrollView(change: StockChange) -> some View {
@@ -49,10 +54,16 @@ struct HomeView: View {
                     case .up:
                         ForEach(store.upStocks) { stock in
                             HomeStockView(stock: stock, change: .up)
+                                .onTapGesture {
+                                    store.send(.stockTapped(stock))
+                                }
                         }
                     case .down:
                         ForEach(store.downStocks) { stock in
                             HomeStockView(stock: stock, change: .down)
+                                .onTapGesture {
+                                    store.send(.stockTapped(stock))
+                                }
                         }
                     default: EmptyView()
                     }
